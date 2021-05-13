@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Send Message to Abhijith</h1>
+<form method="POST">
+    {% csrf_token %}
+    Name : <input type="text" name="name" class='cl'>
+    Message :<input type="text" name="message">
+    <input type="submit">
+</form>
+
+
+{% endblock %}
