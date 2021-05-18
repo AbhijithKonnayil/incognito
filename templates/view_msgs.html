@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>View Messgae</h1>
+{% if temp %}
+<h2>{{temp}}</h2>
+{% else %}
+<h2>Temp Not AVailable</h2>
+{% endif %}
+<table>
+    {% for each in msgs %}
+
+    <tr>
+        <td>{{each.id}}</td>
+        <td>{{each.msg}}</td>
+        <td>{{each.datetime}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -138,3 +138,9 @@ dmypy.json
 cython_debug/
 db.sqlite3
 .vscode/
+
+RDBMS               OBJ
+
+Tables              Class
+Columns             Fields
+Row                 object
