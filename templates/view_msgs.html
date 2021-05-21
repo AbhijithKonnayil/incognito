@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>View Messgae</h1>
+<h1>Hi {{request.user}} View Messgae</h1>
 {% if temp %}
 <h2>{{temp}}</h2>
 {% else %}

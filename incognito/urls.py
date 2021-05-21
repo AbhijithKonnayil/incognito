@@ -20,4 +20,5 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('msg/', include('msg_manager.urls')),
+    path('user/', include('user_manager.urls')),
 ]
