@@ -8,9 +8,9 @@ class MsgForm(ModelForm):
     def v(self):
         return 'not valid'
 
-    name = forms.CharField(max_length=10, validators=[v], required=False)
+    # name = forms.CharField(max_length=10, validators=[v], required=False)
 
     # msg = forms.CharField(label='Message',validators=)
     class Meta:
         model = Message
-        fields = '__all__'
+        fields = ('msg',)
