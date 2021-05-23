@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>Send Message to Abhijith</h1>
+<h1>Send Message to {{name}}</h1>
 <form method="POST">
     {% csrf_token %}
     {% for field in form %}

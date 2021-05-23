@@ -11,8 +11,8 @@ class SendMessage(View):
 
     def get(self, request, username):
         form = MsgForm()
-        print(username)
-        return render(request, 'home.html', {'form':form})
+        user = User.objects.get(username=username)
+        return render(request, 'home.html', {'form':form, 'name':user.first_name})
     
     def post(self, request, username):
         msg = request.POST['msg']

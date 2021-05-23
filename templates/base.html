@@ -7,8 +7,11 @@
 </head>
 
 <body>
+    {% if request.user.is_authenticated %}
     <a href="/msg/">Send Msg</a> <br>
-    <a href="/msg/view/">View Msg</a>
+    <a href="/msg/view/">View Msg</a><br>
+    <a href="/user/logout/">Logout</a><br>
+    {% endif %}
     {% block body %}
     {% endblock%}
 </body>

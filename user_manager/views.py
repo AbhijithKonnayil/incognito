@@ -2,7 +2,16 @@ from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
 from user_manager.froms import LoginForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+
+
+class AuthView(View):
+
+    def get(self, request):
+        if(request.user.is_authenticated):
+            return HttpResponseRedirect('/msg/view/')
+        else:
+            return HttpResponseRedirect('user/login/')
 
 
 class LoginView(View):
@@ -25,3 +34,10 @@ class LoginView(View):
         form = LoginForm()
         
         return render(request, 'login.html', {'form':form})
+
+
+class LogoutView(View):
+
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect('/')

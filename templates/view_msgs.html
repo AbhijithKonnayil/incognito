@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<h1>Share this link with friend.</h1>
+<a href="/msg/{{request.user.username}}/" target="_blank">http://127.0.0.1:8001/msg/{{request.user.username}}/</a>
 <h1>Hi {{request.user}} View Messgae</h1>
-{% if temp %}
-<h2>{{temp}}</h2>
-{% else %}
-<h2>Temp Not AVailable</h2>
-{% endif %}
 <table>
     {% for each in msgs %}
 
